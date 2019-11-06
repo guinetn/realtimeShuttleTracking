@@ -63,6 +63,26 @@ var geojson = [
 
 L.mapbox.featureLayer(geojson).addTo(map);
 
+
+
+// Let's fake a DM (Dynamic marker)
+var DM = L.marker([mapCenter.lat, mapCenter.long], {
+    icon: L.mapbox.marker.icon({'marker-color': '#f86767',  'marker-symbol': 'bus'}),
+    title: "bus"
+});
+
+//  I wanna it to circle around the map center inside a radius of..500m. As 1°=60NM=60*1.852km=111.12km. So 500m is 0.5/111.12
+let radius = 0.1/60*1.852;
+var t = 0;
+var animateDM = ()=>{    
+    DM.setLatLng(L.latLng( mapCenter.lat  + radius*Math.sin(t), 
+    	       						  mapCenter.long + radius*Math.cos(t)));    
+    t+=0.02
+}
+window.setInterval(animateDM, 200);
+// Add DM to the map
+DM.addTo(map);
+
 </script>	
 
 </body>
