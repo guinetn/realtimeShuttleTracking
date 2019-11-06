@@ -83,6 +83,42 @@ window.setInterval(animateDM, 200);
 // Add DM to the map
 DM.addTo(map);
 
+
+
+// Add my device position (Visitor marker)
+var VM = undefined;
+function setupVMPosition(position)
+{
+  console.log("location Latitude: " + position.coords.latitude + " / Longitude: " + position.coords.longitude);
+  VM = L.marker([position.coords.latitude, position.coords.longitude], {
+      icon: L.mapbox.marker.icon({'marker-color': '#ff0000',  'marker-symbol': 'water'}),
+      title: "ME"
+    });  
+
+  VM.addTo(map);
+}
+
+var animateVM = ()=>{ 
+  if (VM != undefined)
+    VM.setLatLng(L.latLng( mapCenter.lat  + radius*Math.sin(t), 
+    	       						  mapCenter.long + radius*Math.cos(t)));   
+}
+//window.setInterval(animateVM, 2000);
+
+// Add VM to the map
+//VM.addTo(map);
+
+
+function getLocation() {
+  if ("geolocation" in navigator) {
+  	navigator.geolocation.getCurrentPosition(setupVMPosition);    
+  }
+  else {
+    console.info("geolocation is not supported in this environment");
+  }
+}
+
+getLocation();
 </script>	
 
 </body>
