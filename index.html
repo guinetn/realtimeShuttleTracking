@@ -16,15 +16,53 @@
 <div id='map'></div>
 
 <script>
-let mapCenter = { lat:48.89486, long:2.11367 } // centered near "Suez" Le Pecq (France)
 
+// Map will be centered near "Suez" Le Pecq (France)
+let mapCenter = { lat:48.89486, long:2.11367 } 
+
+// My api token
 L.mapbox.accessToken = 'pk.eyJ1Ijoibmd1aW5ldCIsImEiOiJjaW1pdXU0M28wMDB1dmxtNTB5aXR4dDh1In0.60moP3OPbtqFBKD-ba4OBQ';
 
 var map = L.mapbox.map('map')
                   .setView([mapCenter.lat, mapCenter.long], 16) 
                   .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11'));
     
+// Add scale (a map without a scale is not!)    
 L.control.scale().addTo(map);
+
+// Add SM (Static markers)
+var geojson = [
+  {
+    "type": "Feature",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [2.11403, 48.89041]
+    },
+    "properties": {
+      "title": "Suez Le Pecq",
+      "description": "Job place",
+      "marker-color": "#004353",
+      "marker-size": "large",
+      "marker-symbol": "water"      
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [2.1219,48.89823]
+    },
+    "properties": {
+      "title": "RER Le Vesinet/Pecq",      
+      "marker-color": "#004353",
+      "marker-size": "large",
+      "marker-symbol": "rail"      
+    }
+  }
+];
+
+L.mapbox.featureLayer(geojson).addTo(map);
+
 </script>	
 
 </body>
