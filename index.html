@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
+	<meta charset="utf-8">
 	<title>Realtime Shuttle Tracking</title>
-	<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+	<meta name='viewport' content='width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=no' />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">  
 	<script src='https://api.mapbox.com/mapbox.js/v3.2.1/mapbox.js'></script>
-	<link href='https://api.mapbox.com/mapbox.js/v3.2.1/mapbox.css' rel='stylesheet' />
-	<style>
-	  body { margin:0; padding:0; }
-	  #map { position:absolute; top:0; bottom:0; width:100%; }
-	</style>
+	<link href='https://api.mapbox.com/mapbox.js/v3.2.1/mapbox.css' rel='stylesheet' />	
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
+
 <body>
-	
+
+<header>
+  <h1 class="header__title">Realtime Shuttle Tracking</h1>
+</header>
+
 <div id='map'></div>
 
 <script>
@@ -109,12 +112,16 @@ var animateVM = ()=>{
 //VM.addTo(map);
 
 
-function getLocation() {
+function getLocation() 
+{
+  // Check whether browser supports Geolocation API or not
   if ("geolocation" in navigator) {
+    //  geolocation code 
   	navigator.geolocation.getCurrentPosition(setupVMPosition);    
   }
   else {
-    console.info("geolocation is not supported in this environment");
+     // geolocation not supported
+    console.info("This environment doesn't support HTML Geolocation");
   }
 }
 
