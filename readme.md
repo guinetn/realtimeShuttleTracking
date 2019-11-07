@@ -11,13 +11,14 @@ VM|Visitor Marker|Map marker indicating people connected (you appear in red, oth
 
 ## Roadmap
 
-* 1. WORKING SKELETON: STATIC ASSETS
+**1. WORKING SKELETON: STATIC ASSETS**
 * ✔ Display a map (try leaflet, mapbox… ?)  - (mapbox choose)
 * ✔ Add **static markers (SM)** on map (bus stop, station...) 
 * ✔ Fake a **dynamic marker (DM)**: A transport marker to fake a moving transport
 * ✔ See my device position on the map (**Visitor Marker: VM**)
 * > VM naming ?
-* 2. GO REALTIME
+
+**2. GO REALTIME**
 * ☐ Create a DB to store (share) VM positions: firestore, mongodb… ?
 * VM Subscribe/Push:  
 * ☐ App start: push (update) VM current position to DB in realtime (socket.io, define push frequency: app parameter ?)
@@ -26,7 +27,8 @@ VM|Visitor Marker|Map marker indicating people connected (you appear in red, oth
 * ☐ Sync map with VM in DB
 * ☐ Add option for transport driver to be identified (and tracked in DB) a DM
 * ☐ Each SM display (on click) the last 3rd times a DM passed around (in a radius of…)
-* 3. BE PROGRESSIVE
+
+**3. BE PROGRESSIVE**
 * ☐ Pass pwa !
 * 4. CHERRY ON THE CAKE
 * ☐ DM average time between two or N SM = time estimation for VM waiting at SM
@@ -38,9 +40,9 @@ SEO keywords: tracking position suez shuttle
 
 ## Helpers
 
-https://github.com/googlecodelabs/your-first-pwapp
-https://codelabs.developers.google.com/codelabs/your-first-pwapp/#1
-https://developers.google.com/web/fundamentals/architecture/app-shell
+- https://github.com/googlecodelabs/your-first-pwapp
+- https://codelabs.developers.google.com/codelabs/your-first-pwapp/#1
+- https://developers.google.com/web/fundamentals/architecture/app-shell
 
 ### Author
 
