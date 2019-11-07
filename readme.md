@@ -22,6 +22,12 @@ View position of the transports you're waiting for.
 
 SEO: tracking position suez shuttle
 
+## Helpers
+
+https://github.com/googlecodelabs/your-first-pwapp
+https://codelabs.developers.google.com/codelabs/your-first-pwapp/#1
+https://developers.google.com/web/fundamentals/architecture/app-shell
+
 ### Author
 
 nicolas guinet <nguinet.pro@gmail.com>
