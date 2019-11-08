@@ -87,6 +87,8 @@ https://css-tricks.com/why-parcel-has-become-my-go-to-bundler-for-development/
 "serve": "parcel index.html --open"
 }
 
+https://medium.com/@chesterhow/building-a-static-site-with-parcel-part-2-5663656d040a
+
 ## PWA
 
 https://love2dev.com/pwa/
