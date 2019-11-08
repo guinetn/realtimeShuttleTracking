@@ -1,0 +1,34 @@
+{
+  "name": "realtimeshuttletracking",
+  "version": "1.0.0",
+  "description": "View position of the transports you're waiting for.",
+  "main": "index.js",
+  "scripts": {
+    "serve": "parcel src/index.html --open",
+    "prebuild-linux": "rm -rf dist",
+    "prebuild": "rmdir /S /Q dist",
+    "build": "parcel build src/index.html --public-url ./ --no-source-maps",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guinetn/RealtimeShuttleTracking.git"
+  },
+  "keywords": [
+    "tracking",
+    "position",
+    "suez",
+    "shuttle"
+  ],
+  "author": "Nicolas Guinet",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/guinetn/RealtimeShuttleTracking/issues"
+  },
+  "homepage": "https://github.com/guinetn/RealtimeShuttleTracking#readme",
+  "devDependencies": {
+    "cssnano": "^4.1.10",
+    "marked": "^0.7.0",
+    "node-sass": "^4.13.0"
+  }
+}

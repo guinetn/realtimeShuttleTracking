@@ -1,3 +1,5 @@
+$background: #ffec00;
+
 body {
   margin: 0;
   padding: 0;
@@ -5,19 +7,22 @@ body {
 
 h1 {
   font-size: 2em;
-  margin: 0.67em 0;
+  margin: 0.37em 0.5em;
+  color: navy;
 }
 
 header {
+  margin: 0;
   position: absolute;
   top: 0;
-  height: 10px;
-  background-color: royalblue;
+  height: auto;
+  width: 100%;
+  background-color: $background;
   font: 1rem "Fira Sans", sans-serif;
-  text-shadow: #000 0 0 0.2em;
+  text-shadow: #fff 0 1 0.2em;
 }
 .header__title {
-  color: white;
+  color: #000;
 }
 
 #map {

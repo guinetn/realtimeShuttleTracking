@@ -1,1 +1,5 @@
-/drafts
+drafts
+node_modules
+.cache
+dist
+package-lock.json
