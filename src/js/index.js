@@ -2,6 +2,7 @@ import "../style.scss";
 
 // Map will be centered near "Suez" Le Pecq (France)
 let mapCenter = { lat: 48.89486, long: 2.11367 };
+let accuracyElem = document.querySelector("#accuracy");
 
 // My api token
 L.mapbox.accessToken =
@@ -76,7 +77,7 @@ DM.addTo(map);
 
 function LogPosition(position, context = "") {
   console.log(
-    `${context} Lat: ${position.coords.latitude} - Long: ${position.coords.longitude}`
+    `${context} Lat: ${position.coords.latitude} - Long: ${position.coords.longitude} - Acc: ${position.coords.accuracy} m`
   );
 }
 
@@ -96,8 +97,10 @@ function setVMCurrentPosition(position) {
 }
 
 var updateVMPosition = position => {
-  if (VM != undefined)
+  if (VM != undefined) {
     VM.setLatLng(L.latLng(position.coords.latitude, position.coords.longitude));
+    accuracyElem.style.width = `${1000 / position.coords.accuracy}px`;
+  }
 };
 //window.setInterval(animateVM, 2000);
 

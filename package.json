@@ -1,7 +1,7 @@
 {
   "name": "realtimeshuttletracking",
   "version": "1.0.0",
-  "description": "View position of the transports you're waiting for.",
+  "description": "Track position of your next transportation",
   "main": "index.js",
   "scripts": {
     "serve": "parcel src/index.html --open",

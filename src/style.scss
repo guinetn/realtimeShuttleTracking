@@ -1,4 +1,4 @@
-$background: #000;
+$background: #aadc14;
 
 body {
   margin: 0;
@@ -8,7 +8,6 @@ body {
 h1 {
   font-size: 2em;
   margin: 0.37em 0.5em;
-  color: navy;
 }
 
 header {
@@ -19,11 +18,11 @@ header {
   width: 100%;
   background-color: $background;
   font: 1rem "Lato", sans-serif;
-  text-shadow: #fff 0 1 0.2em;
+  text-shadow: #000000 0 1 0.2em;
 }
 
-.header__title {
-  color: #ff0;
+header > h1 {
+  color: #fff;
   text-align: center;
 }
 
@@ -32,4 +31,15 @@ header {
   top: 60px;
   bottom: 0;
   width: 100%;
+}
+
+#accuracy {
+  width: 102px;
+  height: 4px;
+  background-color: #000;
+  color: yellow;
+  z-index: 1010;
+  position: absolute;
+  left: 5px;
+  bottom: 67px;
 }
