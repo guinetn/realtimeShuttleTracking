@@ -1,4 +1,4 @@
-$background: #ffec00;
+$background: #000;
 
 body {
   margin: 0;
@@ -18,11 +18,13 @@ header {
   height: auto;
   width: 100%;
   background-color: $background;
-  font: 1rem "Fira Sans", sans-serif;
+  font: 1rem "Lato", sans-serif;
   text-shadow: #fff 0 1 0.2em;
 }
+
 .header__title {
-  color: #000;
+  color: #ff0;
+  text-align: center;
 }
 
 #map {
