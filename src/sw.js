@@ -4,9 +4,9 @@ Registration
 Installation
 Activation
 */
-const CACHE = 'RSTCACHE-v1'
-const cachedCss = './style.css'
-const cachedJS = './js/index.js'
+const version = "v1/";
+const CACHE = `cachedAssets-${version}`;
+
 const staticAssetsToCache = ['./index.html', cachedCss, cachedJS]
 
 // On install: cache some resources

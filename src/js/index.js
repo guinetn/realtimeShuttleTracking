@@ -3,7 +3,6 @@ import '../style.scss'
 // Map will be centered near 'Suez' Le Pecq (France)
 const mapCenter = { lat: 48.89486, long: 2.11367 }
 const myPositionAccuracy = document.querySelector('#myPositionAccuracy')
-const swPath = '../sw.js'
 
 // Fix ESlint "L is not defined"
 var L = window.L
@@ -178,7 +177,7 @@ if ('serviceWorker' in navigator) {
   // Use the window load event to keep the page load performant
   window.addEventListener('load', () => {
     navigator.serviceWorker
-      .register(swPath)
+      .register('../sw.js') // cannot be variabilized
       .then(registration => {
         console.log(`Service worker registered in scope: ${registration}`)
       })
