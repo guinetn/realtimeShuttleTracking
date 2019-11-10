@@ -4,11 +4,12 @@
   "description": "Track position of your next transportation",
   "main": "index.js",
   "scripts": {
-    "serve": "standard && parcel src/index.html --open",
-    "prebuild-linux": "rm -rf dist",
-    "prebuild-win": "rmdir /S /Q dist",
+    "clean": "rm -rf .cache && rm -rf dist",
+    "cleanwin": "rmdir /S /Q .cache && rmdir /S /Q dist",
+    "serve": "standard && parcel src/index.html --open",    
     "prebuild": "rm -rf dist",
-    "build": "parcel build src/index.html --public-url ./ --no-source-maps",
+    "build": "parcel build src/index.html --no-source-maps --public-url ./",
+    "buildwin": "rmdir /S /Q dist && parcel build src/index.html --no-source-maps --public-url ./",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

@@ -3,6 +3,7 @@ import '../style.scss'
 // Map will be centered near 'Suez' Le Pecq (France)
 const mapCenter = { lat: 48.89486, long: 2.11367 }
 const myPositionAccuracy = document.querySelector('#myPositionAccuracy')
+const swPath = '../sw.js'
 
 // Fix ESlint "L is not defined"
 var L = window.L
@@ -174,14 +175,13 @@ startWatchVM()
 // https://codelabs.developers.google.com/codelabs/your-first-pwapp/#4
 // Register service worker
 if ('serviceWorker' in navigator) {
-  try {
-    window.addEventListener('load', () => {
-      console.log('Service worker registering...')
-      navigator.serviceWorker.register('../sw.js').then(registration => {
-        console.log('Service worker registered', registration)
+  // Use the window load event to keep the page load performant
+  window.addEventListener('load', () => {
+    navigator.serviceWorker
+      .register(swPath)
+      .then(registration => {
+        console.log(`Service worker registered in scope: ${registration}`)
       })
-    })
-  } catch (error) {
-    console.log('Service Worker Registration Failed')
-  }
+      .catch(e => console.log('SW error: ', e))
+  })
 }

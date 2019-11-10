@@ -5,12 +5,9 @@ Installation
 Activation
 */
 const CACHE = 'RSTCACHE-v1'
-const staticAssetsToCache = [
-  './index.html',
-  './style.css',
-  './js/index.js',
-  'js/index.js'
-]
+const cachedCss = './style.css'
+const cachedJS = './js/index.js'
+const staticAssetsToCache = ['./index.html', cachedCss, cachedJS]
 
 // On install: cache some resources
 self.addEventListener('install', function (event) {
