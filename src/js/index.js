@@ -2,7 +2,7 @@ import "../style.scss";
 
 // Map will be centered near "Suez" Le Pecq (France)
 let mapCenter = { lat: 48.89486, long: 2.11367 };
-let accuracyElem = document.querySelector("#accuracy");
+let myPositionAccuracy = document.querySelector("#myPositionAccuracy");
 
 // My api token
 L.mapbox.accessToken =
@@ -99,7 +99,7 @@ function setVMCurrentPosition(position) {
 var updateVMPosition = position => {
   if (VM != undefined) {
     VM.setLatLng(L.latLng(position.coords.latitude, position.coords.longitude));
-    accuracyElem.style.width = `${1000 / position.coords.accuracy}px`;
+    myPositionAccuracy.style.width = `${1000 / position.coords.accuracy}px`;
   }
 };
 //window.setInterval(animateVM, 2000);
@@ -122,7 +122,7 @@ function getLocation() {
     );
   } else {
     // geolocation not supported
-    console.info("This environment doesn't support HTML Geolocation");
+    alert("Geolocation not supported");
   }
 }
 
@@ -147,7 +147,7 @@ function positionError(error) {
 
 var geoWatch;
 
-function startWatch() {
+function startWatchVM() {
   // simulate with devtools (F12) -> Top Right [...] -> More Tools -> Sensors -> Geolocation -> Overrides -> Others -> Lat/Long
   if (!geoWatch) {
     if (
@@ -157,11 +157,7 @@ function startWatch() {
       geoWatch = navigator.geolocation.watchPosition(
         updateVMPosition,
         positionError,
-        {
-          enableHighAccuracy: false,
-          timeout: 15000,
-          maximumAge: 0
-        }
+        { enableHighAccuracy: false, timeout: 15000, maximumAge: 0 }
       );
     }
   }
@@ -172,16 +168,16 @@ function stopWatch() {
   geoWatch = undefined;
 }
 
-startWatch();
+startWatchVM();
 
 // https://codelabs.developers.google.com/codelabs/your-first-pwapp/#4
-// Register service worker.
+// Register service worker
 if ("serviceWorker" in navigator) {
   try {
     window.addEventListener("load", () => {
       console.log("Service worker registering...");
       navigator.serviceWorker.register("../sw.js").then(registration => {
-        console.log("Service worker registered.", registration);
+        console.log("Service worker registered", registration);
       });
     });
   } catch (error) {
