@@ -1,26 +1,24 @@
 # Realtime Shuttle Tracking
-
 View position of the transports you're waiting for.
 
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 # DEMO
-
 [![Netlify Status](https://api.netlify.com/api/v1/badges/01e2ae04-b673-49c7-984b-4f8d6f2990b4/deploy-status)](https://app.netlify.com/sites/realtimeshuttletracking/deploys)
 
-Online demo: <realtimeshuttletracking.netlify.com>.
+Online demo: https://realtimeshuttletracking.netlify.com
 
 # Installation
 
-> $git clone https://github.com/guinetn/RealtimeShuttleTracking.git
-> $cd RealtimeShuttleTracking
-> $npm
-> $npm run serve Open automatically http://localhost:1234/
+> $git clone https://github.com/guinetn/RealtimeShuttleTracking.git  
+$cd RealtimeShuttleTracking  
+$npm  
+$npm run serve Open automatically http://localhost:1234/
 
 **Build a release**
 
-> \$npm run build
-> This will generate a release in /dist
+> \$npm run build  
+This will generate a release in /dist
 
 ## Terms
 
@@ -55,7 +53,7 @@ Online demo: <realtimeshuttletracking.netlify.com>.
 
 - ✔ Pass pwa !
 
-** 4. CHERRY ON THE CAKE**
+**4. CHERRY ON THE CAKE**
 
 - ☐ DM average time between two or N SM = time estimation for VM waiting at SM
 - ☐ DM can view how many people are near (radius=?) / have subscribed on SM
