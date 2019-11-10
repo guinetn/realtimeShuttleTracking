@@ -4,7 +4,7 @@
   "description": "Track position of your next transportation",
   "main": "index.js",
   "scripts": {
-    "serve": "parcel src/index.html --open",
+    "serve": "standard && parcel src/index.html --open",
     "prebuild-linux": "rm -rf dist",
     "prebuild-win": "rmdir /S /Q dist",
     "prebuild": "rm -rf dist",
@@ -32,5 +32,6 @@
     "marked": "^0.7.0",
     "node-sass": "^4.13.0",
     "parcel-bundler": "^1.12.4"
-  }
+  },
+  "dependencies": {}
 }
