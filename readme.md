@@ -10,15 +10,20 @@ Online demo: https://realtimeshuttletracking.netlify.com
 
 # Installation
 
-> $git clone https://github.com/guinetn/RealtimeShuttleTracking.git  
-$cd RealtimeShuttleTracking  
-$npm  
-$npm run serve Open automatically http://localhost:1234/
+```bash 
+git clone https://github.com/guinetn/RealtimeShuttleTracking.git  
+cd RealtimeShuttleTracking  
+npm install 
+npm run serve 
+```
+Will automatically open an express server on http://localhost:1234
 
 **Build a release**
 
-> \$npm run build  
+```bash
+npm run build  
 This will generate a release in /dist
+```
 
 ## Terms
 
@@ -36,6 +41,7 @@ This will generate a release in /dist
 - ✔ Add **static markers (SM)** on map (bus stop, station...)
 - ✔ Fake a **dynamic marker (DM)**: A transport marker to fake a moving transport
 - ✔ Watch (tracking) my device position changes on the map (**Visitor Marker: VM**)
+- ✔ Test in on my phone (Smasung A10)..wooo accuracy is 20m...70m...humm...Must display position accuracy 
 - ☐ VM naming ? device UID availabel: mac addr, tel number ?
 
 **2. GO REALTIME**
@@ -52,6 +58,9 @@ This will generate a release in /dist
 **3. BE PROGRESSIVE**
 
 - ✔ Pass pwa !
+- ✔ Try vanilla service worker...but parcel file hash cause mismatch between original (/src) filename listed in sw.js and hashed file (/dist)
+- ✔ Fix with workbox-cli..but want more control on caching
+- ✔ Finally works nice with google workbox-build
 
 **4. CHERRY ON THE CAKE**
 

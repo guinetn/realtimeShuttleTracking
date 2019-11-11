@@ -12,6 +12,7 @@ limitations under the License.
 */
 
 const express = require('express')
+const open = require('open')
 const app = express()
 
 // This serves static files from the specified directory
@@ -22,4 +23,5 @@ const server = app.listen(1234, () => {
   const port = server.address().port
 
   console.log(`App listening ${'../dist'} at http://${host}:${port}`)
+  open('http://localhost:1234/index.html')
 })

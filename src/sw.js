@@ -4,7 +4,7 @@ importScripts('https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox
 
 if (workbox) {
   console.log('Yay! Workbox is loaded 🎉')
-  workbox.precaching.precacheAndRoute([])  // workbox will inject assets to cache here
+  workbox.precaching.precacheAndRoute([]) // workbox will inject assets to cache here
 } else {
   console.log('Boo! Workbox did not load 😬')
 }
