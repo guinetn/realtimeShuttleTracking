@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Track position of your next transportation",
   "main": "index.js",
-  "scripts": {        
-    "serve": "set NODE_ENV=development && node build/clean.js && standard && parcel build src/index.html && workbox generateSW workbox-config.js && liveserver",    
+  "scripts": {
+    "serve": "node build/clean.js && standard && parcel build src/index.html && node build/sw.js && node build/server.js",
     "build": "node build/clean.js && standard && parcel build src/index.html --no-source-maps --public-url ./ && node build/sw.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -26,11 +26,12 @@
   "homepage": "https://github.com/guinetn/RealtimeShuttleTracking#readme",
   "devDependencies": {
     "cssnano": "^4.1.10",
+    "express": "^4.17.1",
     "marked": "^0.7.0",
     "node-sass": "^4.13.0",
     "parcel-bundler": "^1.12.4",
     "shelljs": "^0.8.3",
-    "workbox-cli": "^4.3.1"
+    "workbox-build": "^4.3.1"
   },
   "dependencies": {}
 }
