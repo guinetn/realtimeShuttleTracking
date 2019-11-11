@@ -66,3 +66,10 @@ SEO keywords: tracking position suez shuttle
 ### Author
 
 nicolas guinet <nguinet.pro@gmail.com>
+
+### License
+MIT License, see <LICENSE.md> for details.
+
+## Project Debriefing
+
+

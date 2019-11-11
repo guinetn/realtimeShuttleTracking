@@ -170,17 +170,3 @@ function startWatchVM () {
 // }
 
 startWatchVM()
-
-// https://codelabs.developers.google.com/codelabs/your-first-pwapp/#4
-// Register service worker
-if ('serviceWorker' in navigator) {
-  // Use the window load event to keep the page load performant
-  window.addEventListener('load', () => {
-    navigator.serviceWorker
-      .register('../sw.js') // cannot be variabilized
-      .then(registration => {
-        console.log(`Service worker registered in scope: ${registration}`)
-      })
-      .catch(e => console.log('SW error: ', e))
-  })
-}
