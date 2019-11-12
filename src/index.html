@@ -24,6 +24,7 @@
   <!-- Windows home screen-->
   <meta name="msapplication-TileImage" content="/images/icons/icon-152x152.png"/>
   <meta name="msapplication-TileColor" content="#AADC14"/>
+
 </head>
  
 <body>
@@ -35,9 +36,22 @@
   
   <div id='map'></div> 
   <div id="myPositionAccuracy" title="GPS position accuracy %"></div>
-
-  <script src="./js/index.js"></script>
 </div> 
+
+<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
+
+<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+<script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-analytics.js"></script>
+
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-firestore.js"></script>
+
+
+<script src="./js/index.js"></script>
 
 <script>
 // https://codelabs.developers.google.com/codelabs/your-first-pwapp/#4
@@ -54,5 +68,6 @@ if ('serviceWorker' in navigator) {
   })
 }
 </script>   
+
 </body>
 </html>

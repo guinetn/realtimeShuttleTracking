@@ -1,4 +1,21 @@
 import '../style.scss'
+// Firebase Core
+import * as firebase from 'firebase/app'
+// Firebase products
+import 'firebase/database'
+
+var firebaseConfig = {
+  apiKey: 'AIzaSyD7b_gWWcQSX-l8Ik3V-3JITPrAqNNfjvo',
+  authDomain: 'realtime-shuttle-tracking.firebaseapp.com',
+  databaseURL: 'https://realtime-shuttle-tracking.firebaseio.com',
+  projectId: 'realtime-shuttle-tracking',
+  storageBucket: 'realtime-shuttle-tracking.appspot.com',
+  messagingSenderId: '250774426185',
+  appId: '1:250774426185:web:f7f11a47ab9dd8ee74e598'
+}
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig)
 
 // Map will be centered near 'Suez' Le Pecq (France)
 const mapCenter = { lat: 48.89486, long: 2.11367 }
@@ -75,6 +92,18 @@ var animateDM = () => {
 window.setInterval(animateDM, 200)
 // Add DM to the map
 DM.addTo(map)
+
+window.setInterval(() => { // var database = firebase.database()
+  writePosition(DM.getLatLng().lat, DM.getLatLng().lng)
+}, 2000)
+
+function writePosition (lat, long) {
+  firebase.database().ref('dm1').set({
+      lat: lat,
+      long: long,
+      date: new Date().toJSON()
+    })
+}
 
 function LogPosition (position, context = '') {
   console.log(
