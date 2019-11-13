@@ -96,9 +96,9 @@ var fakeDM = firebase.database().ref('config/fakeDM')
 fakeDM.on('value', (snapshot) => {
   console.log(`${snapshot} - ${snapshot.val()}`)
   if (snapshot.val() === true) {
-    timer = window.setInterval(animateDM, 200)
+     timer = window.setInterval(animateDM, 200)
   } else {
-    clearInterval(timer)
+     clearInterval(timer)
   }
 })
 
