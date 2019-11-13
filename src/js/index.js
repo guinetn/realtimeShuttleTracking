@@ -77,8 +77,7 @@ var DM = L.marker([mapCenter.lat, mapCenter.long], {
 })
 
 //  I wanna it to circle around the map center inside a radius of..500m. As 1°=60NM=60*1.852km=111.12km. So 500m is 0.5/111.12
-const radius = (0.1 / 60) * 1.852
-var t = 0
+
 var animateDM = () => {
   DM.setLatLng(
     L.latLng(
@@ -89,7 +88,20 @@ var animateDM = () => {
   // console.log(DM.getLatLng().lat + ' ' + DM.getLatLng().lng)
   t += 0.02
 }
-window.setInterval(animateDM, 200)
+
+const radius = (0.1 / 60) * 1.852
+var t = 0
+var timer
+var fakeDM = firebase.database().ref('config/fakeDM')
+fakeDM.on('value', (snapshot) => {
+  console.log(`${snapshot} - ${snapshot.val()}`)
+  if (snapshot.val() === true) {
+    timer = window.setInterval(animateDM, 200)
+  } else {
+    clearInterval(timer)
+  }
+})
+
 // Add DM to the map
 DM.addTo(map)
 
@@ -99,10 +111,10 @@ window.setInterval(() => { // var database = firebase.database()
 
 function writePosition (lat, long) {
   firebase.database().ref('dm1').set({
-      lat: lat,
-      long: long,
-      date: new Date().toJSON()
-    })
+    lat: lat,
+    long: long,
+    date: new Date().toJSON()
+  })
 }
 
 function LogPosition (position, context = '') {
