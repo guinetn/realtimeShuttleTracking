@@ -20,6 +20,7 @@ firebase.initializeApp(firebaseConfig)
 // Map will be centered near 'Suez' Le Pecq (France)
 const mapCenter = { lat: 48.89486, long: 2.11367 }
 const myPositionAccuracy = document.querySelector('#myPositionAccuracy')
+const myPositionAccuracyText = document.querySelector('#myPositionAccuracyText')
 
 // Fix ESlint "L is not defined"
 var L = window.L
@@ -96,9 +97,9 @@ var fakeDM = firebase.database().ref('config/fakeDM')
 fakeDM.on('value', (snapshot) => {
   console.log(`${snapshot} - ${snapshot.val()}`)
   if (snapshot.val() === true) {
-     timer = window.setInterval(animateDM, 200)
+    timer = window.setInterval(animateDM, 200)
   } else {
-     clearInterval(timer)
+    clearInterval(timer)
   }
 })
 
@@ -142,6 +143,7 @@ var updateVMPosition = position => {
   if (VM !== undefined) {
     VM.setLatLng(L.latLng(position.coords.latitude, position.coords.longitude))
     myPositionAccuracy.style.width = `${1000 / position.coords.accuracy}px`
+    myPositionAccuracyText.innerText = `${position.coords.accuracy} m`
   }
 }
 // window.setInterval(animateVM, 2000)
