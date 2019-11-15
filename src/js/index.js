@@ -144,9 +144,10 @@ var updateVMPosition = position => {
     VM.setLatLng(L.latLng(position.coords.latitude, position.coords.longitude))
     myPositionAccuracy.style.width = `${1000 / position.coords.accuracy}px`
     myPositionAccuracyText.innerText = `${position.coords.accuracy} m`
+    console.log(`accuracy is ${position.coords.accuracy} m`)
   }
 }
-// window.setInterval(animateVM, 2000)
+ m// window.setInterval(animateVM, 2000)
 
 // Add VM to the map
 // VM.addTo(map)
