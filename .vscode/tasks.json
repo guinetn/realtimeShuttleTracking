@@ -5,27 +5,19 @@
   "tasks": [
     {
         "type": "npm",
-        "script": "serve",
-        "group": "build",
-        "problemMatcher": []
-    },
-    {
-        "type": "npm",
         "script": "build",
-        "group": "build",
+        "group": {
+            "kind": "build"
+        },
         "problemMatcher": []
     },
     {
         "type": "npm",
-        "script": "deploymoi",
-        "path": "functions/",
-        "group": "build",
-        "problemMatcher": []
-    },
-    {
-        "type": "npm",
-        "script": "install",
-        "path": "functions/",
+        "script": "serve",
+        "group": {
+            "kind": "build",
+            "isDefault": true
+        },
         "problemMatcher": []
     }
 ]
