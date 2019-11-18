@@ -3,12 +3,12 @@ View position of the transports you're waiting for.
 
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-# Demo
+# 🚀 Demo
 [![Netlify Status](https://api.netlify.com/api/v1/badges/01e2ae04-b673-49c7-984b-4f8d6f2990b4/deploy-status)](https://app.netlify.com/sites/realtimeshuttletracking/deploys)
 
 Online demo: https://realtimeshuttletracking.netlify.com
 
-# Installation
+# 💫 Installation
 
 ```bash 
 git clone https://github.com/guinetn/RealtimeShuttleTracking.git  
@@ -25,7 +25,7 @@ npm run build
 This will generate a release in /dist
 ```
 
-## Terms
+## 🎓 Terms
 
 | Abbr | Name           | Description                                                                             |
 | ---- | -------------- | --------------------------------------------------------------------------------------- |
@@ -46,12 +46,12 @@ This will generate a release in /dist
 
 **2. GO REALTIME**
 
-- ☐ Create a DB to store (share) VM positions: firestore, mongodb… ?
+- ✔ Create a DB to store (share) VM positions: firestore, mongodb… ?. Try firebase first
 - VM Subscribe/Push:
 - ☐ App start: push (update) VM current position to DB in realtime (socket.io, define push frequency: app parameter ?)
 - ☐ App stop: remove VM from DB (or remove unseen (unupdated) VM for a while (~ run sometimes a "VM garbage collector")
-- ☐ Update VM in DB on the map
-- ☐ Sync map with VM in DB
+- ✔ Update VM in DB on the map
+- ✔ Sync map with VM in DB
 - ☐ Add option for transport driver to be identified (and tracked in DB) a DM
 - ☐ Each SM display (on click) the last 3rd times a DM passed around (in a radius of…)
 

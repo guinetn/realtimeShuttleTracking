@@ -4,6 +4,8 @@ import * as firebase from 'firebase/app'
 // Firebase products
 import 'firebase/database'
 
+/* ⬇️⬇️⬇️⬇️⬇️ 🌼 ⬇️⬇️⬇️⬇️⬇️ */
+
 var firebaseConfig = {
   apiKey: 'AIzaSyD7b_gWWcQSX-l8Ik3V-3JITPrAqNNfjvo',
   authDomain: 'realtime-shuttle-tracking.firebaseapp.com',
@@ -144,10 +146,10 @@ var updateVMPosition = position => {
     VM.setLatLng(L.latLng(position.coords.latitude, position.coords.longitude))
     myPositionAccuracy.style.width = `${1000 / position.coords.accuracy}px`
     myPositionAccuracyText.innerText = `${position.coords.accuracy} m`
-    console.log(`accuracy is ${position.coords.accuracy} m`)
+    console.log(`accuracy is ${position.coords.accuracy}`)
   }
 }
- m// window.setInterval(animateVM, 2000)
+// window.setInterval(animateVM, 2000)
 
 // Add VM to the map
 // VM.addTo(map)
