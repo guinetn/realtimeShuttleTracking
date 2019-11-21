@@ -58,9 +58,9 @@ This will generate a release in /dist
 **3. BE PROGRESSIVE**
 
 - ✔ Pass pwa !
-- ✔ Try vanilla service worker...but parcel file hash cause mismatch between original (/src) filename listed in sw.js and hashed file (/dist)
+- ✔ Try vanilla service worker...but parcel files hash cause mismatch between original (/src) filename listed in sw.js and hashed file (/dist)
 - ✔ Fix with workbox-cli..but want more control on caching
-- ✔ Finally works nice with google workbox-build
+- ✔ Finally works nice with [google workbox-build](https://developers.google.com/web/tools/workbox)
 
 **4. CHERRY ON THE CAKE**
 
@@ -79,6 +79,9 @@ nicolas guinet <nguinet.pro@gmail.com>
 ### License
 MIT License, see <LICENSE.md> for details.
 
-## Project Debriefing
+## Project debriefing
+-
+-
+-
 
 
